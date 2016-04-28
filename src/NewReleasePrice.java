@@ -2,7 +2,6 @@
  * Created by kebas on 28.04.2016.
  */
 public class NewReleasePrice extends Price
-
 {
     @Override
     int getPriceCode()
@@ -13,5 +12,11 @@ public class NewReleasePrice extends Price
     @Override
     public double getCharge(int daysRented){
         return daysRented * 3;
+    }
+
+    @Override
+    int getFrequentRenterPoints(int daysRented)
+    {
+        return (daysRented > 1) ? 2: 1;
     }
 }
