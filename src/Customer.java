@@ -39,7 +39,7 @@ class Customer
 			Rental each = (Rental) enum_rentals.nextElement();
 
 			//show figures for this rental
-			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
+			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.movie.getCharge(each)) + "\n";
 		}
 		//add footer lines
 		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
@@ -53,7 +53,7 @@ class Customer
 		while (rentalsEnum.hasMoreElements())
 		{
 			Rental each = (Rental) rentalsEnum.nextElement();
-			result += each.getCharge();
+			result += each.movie.getCharge(each);
 		}
 		return result;
 	}
